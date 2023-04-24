@@ -7,7 +7,7 @@ from geopy.location import Location
 import requests
 from requests.exceptions import RequestException
 
-from script.exceptions import NoneRequestException
+from exceptions import NoneRequestException
 
 
 def find_geocode(city: str) -> Location:
