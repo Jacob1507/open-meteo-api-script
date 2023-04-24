@@ -9,6 +9,8 @@ Main command body:
 * `-r` takes rain value as parameter,
 * `-c` takes city name as parameter (city is optional so parameter might be skipped).
 
+By executing `python script/main.py --help` script will return help text for defined parameters.
+
 ## Examples
 ### Ex. 1
 `python script/main.py -t 15.2 -r 0.2`
