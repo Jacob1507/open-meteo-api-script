@@ -10,22 +10,6 @@ from requests.exceptions import RequestException
 from exceptions import NoneRequestException
 
 
-def find_geocode(city: str) -> Location:
-    geolocator = Nominatim(user_agent='my_app')
-    return geolocator.geocode(city)
-
-
-def get_lon_and_lat(geocode: Location) -> list[float]:
-    coordinates = list()
-
-    if geocode:
-        loc = geocode
-
-        coordinates.append(loc.latitude)
-        coordinates.append(loc.longitude)
-    return coordinates
-
-
 class WeatherFetcher:
 
     def __init__(self, city):
