@@ -1,5 +1,6 @@
 ## How to install 
 * `git clone https://github.com/Jacob1507/open-meteo-api-script`
+* `cd open-meteo-api-script`
 * `pip install -r requirements.txt`
 ## How to use
 Main command body:
