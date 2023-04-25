@@ -9,7 +9,6 @@ from utils.utils import status
 from .test_data.urls import API_URL, API_ENDPOINT_PARAMS, API_INVALID_ENDPOINTS
 
 from requests.exceptions import RequestException
-from script.exceptions import NoneRequestException
 
 WORKING_DIR = os.getcwd()
 TEST_DATA_DIR = WORKING_DIR + '\\tests\\test_data\\'
@@ -58,7 +57,7 @@ class TestWeatherFetcher:
     def test_empty_get_request_throws_error(self):
         weather_fetcher = WeatherFetcher('Warsaw')
 
-        with pytest.raises(NoneRequestException):
+        with pytest.raises(TypeError):
             weather_fetcher.to_dict()
 
     @pytest.mark.asyncio

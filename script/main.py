@@ -2,12 +2,10 @@ import argparse
 import asyncio
 import requests
 
-
 from geopy.geocoders import Nominatim
 from geopy.location import Location
 
 from requests.exceptions import RequestException
-from .exceptions import NoneRequestException
 
 
 class WeatherFetcher:
@@ -51,7 +49,7 @@ class WeatherFetcher:
             data = self._request.json()
             data["city"] = self.city
             return data
-        raise NoneRequestException("Cannot parse NoneType element.")
+        raise TypeError("Cannot parse NoneType element.")
 
 
 class WeatherProcessor:
