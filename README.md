@@ -34,4 +34,9 @@ Warning: Gdansk, low temperature 9.2 of °C and rain 0.9 mm expected on 2023-04-
 Warning: Gdansk, low temperature 8.9 of °C and rain 0.3 mm expected on 2023-04-25T16:00
 ```
 
+### Ex. 3
+`python script/main.py -t 12 -r 0.2 -c uganda`
 
+```
+No data found for Uganda
+```
