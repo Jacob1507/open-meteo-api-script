@@ -5,7 +5,7 @@
 ## How to use
 Main command body:
 
-`python script/main.py -t <float> -r <float> -c <sting>`
+`python script/main.py -t <float> -r <float> -c <string>`
 * `-t` takes temperature value as parameter,
 * `-r` takes rain value as parameter,
 * `-c` takes city name as parameter (city is optional so parameter might be skipped).
