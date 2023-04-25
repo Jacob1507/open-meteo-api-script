@@ -38,7 +38,7 @@ class WeatherFetcher:
         self._request = r
 
     def get_location_info(self) -> Location:
-        """ Returns location info based on latitude and longitude """
+        """ Returns location info based on city """
         geolocator = Nominatim(user_agent='weather_fetcher')
         loc_info = geolocator.geocode(self.city)
         return loc_info
