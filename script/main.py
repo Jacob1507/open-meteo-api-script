@@ -98,7 +98,7 @@ class WeatherProcessor:
                 item = {'temp': temp, 'rain': rain, 'time': time}
                 self.processed_data.append(item)
 
-    async def to_stdout(self) -> None:
+    def to_stdout(self) -> None:
         if not self.processed_data:
             print(f'No data found for {self.weather_data["city"].title()}')
         else:
@@ -111,8 +111,8 @@ class WeatherProcessor:
 
 async def main():
     parser = argparse.ArgumentParser(description='Process API calls')
-    parser.add_argument('-t', '--temp', help='Expects temperature value (represented in "C") as float', type=float)
-    parser.add_argument('-r', '--rain', help='Expects rainfall value (represented in "mm") as float',
+    parser.add_argument('-t', '--temp', help='Expects temperature value as float', type=float)
+    parser.add_argument('-r', '--rain', help='Expects rainfall value as float',
                         default=0.0, type=float)
     parser.add_argument('-c', '--city', help='Expects city name', default='wroclaw', required=False, type=str)
     args = parser.parse_args()
@@ -123,7 +123,7 @@ async def main():
     weather_processor = WeatherProcessor(weather_data=weather_fetcher.to_dict(),
                                          rainfall_threshold=args.rain, temp_threshold=args.temp)
     await weather_processor.filter_data()
-    await weather_processor.to_stdout()
+    weather_processor.to_stdout()
 
 
 if __name__ == '__main__':
