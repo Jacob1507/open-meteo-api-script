@@ -1,13 +1,13 @@
 import argparse
 import asyncio
+import requests
+
 
 from geopy.geocoders import Nominatim
 from geopy.location import Location
 
-import requests
 from requests.exceptions import RequestException
-
-from exceptions import NoneRequestException
+from .exceptions import NoneRequestException
 
 
 class WeatherFetcher:
